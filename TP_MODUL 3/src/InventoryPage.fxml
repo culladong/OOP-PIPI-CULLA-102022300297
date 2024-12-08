@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="InventoryController">
+    <top>
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10; -fx-background-color: lightgray;">
+            <Label text="Inventory Management System" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="tableView">
+            <columns>
+                <TableColumn fx:id="columnAlbumName" text="Album Name" />
+                <TableColumn fx:id="columnArtist" text="Artist" />
+                <TableColumn fx:id="columnTotal" text="Total" />
+                <TableColumn fx:id="columnAvailable" text="Available" />
+                <TableColumn fx:id="columnRented" text="Rented" />
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <HBox spacing="10">
+                <TextField fx:id="albumNameField" promptText="Album Name" />
+                <TextField fx:id="artistField" promptText="Artist" />
+            </HBox>
+            <HBox spacing="10">
+                <TextField fx:id="totalField" promptText="Total" />
+                <TextField fx:id="availableField" promptText="Available" />
+            </HBox>
+            <HBox spacing="10">
+                <Button text="Add Album" onAction="#addAlbum" />
+                <Button text="Update Album" onAction="#updateAlbum" />
+                <Button text="Delete Album" onAction="#deleteAlbum" />
+                <Button text="Rent Album" onAction="#rentAlbum" />
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
